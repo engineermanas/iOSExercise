@@ -7,16 +7,25 @@
 //
 
 #import "TableViewController.h"
+#import "Contsant.h"
 
 @interface TableViewController ()
+{
+    UIAlertView *alertPopUp;
+    WebServiceHandler *serviceHandler;
+}
 
 @end
+
 
 @implementation TableViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    serviceHandler = [WebServiceHandler getInstance];
+    [serviceHandler webServiceCallWithURL:ServiceEndPointURL withParameter:nil];
+    serviceHandler.delegate = self;
     
 }
 
@@ -26,6 +35,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark
+#pragma mark - WebServiceHandler Delegate
+
+-(void)webServiceSuccessResponse:(id)success
+{
+    alertPopUp = [[UIAlertView alloc] initWithTitle:@"JSON" message:[NSString stringWithFormat:@"%@",success] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alertPopUp show];
+}
+-(void)webServiceFailResponse:(id)fail
+{
+    alertPopUp = [[UIAlertView alloc] initWithTitle:@"JSON" message:[NSString stringWithFormat:@"%@",fail] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alertPopUp show];
+
+}
+
+#pragma mark
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

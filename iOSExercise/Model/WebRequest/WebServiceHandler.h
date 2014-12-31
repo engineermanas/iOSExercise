@@ -15,7 +15,7 @@
 
 @end
 
-@interface WebServiceHandler : NSObject
+@interface WebServiceHandler : NSObject <NSURLConnectionDelegate>
 {
     
 }

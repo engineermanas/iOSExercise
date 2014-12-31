@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WebServiceHandler.h"
 
-@interface TableViewController : UITableViewController
+@interface TableViewController : UITableViewController <WebServiceHandlerDelegate>
 
 @end
