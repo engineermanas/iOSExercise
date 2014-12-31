@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>165D957E-B42C-4560-AD32-66993BD946AB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iOSExercise</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>927E9D1C7F0F5A1326EF845D19165FDA1F775A3C</key>
+		<string>https://github.com/engineermanas/iOSExercise.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOSExercise.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>927E9D1C7F0F5A1326EF845D19165FDA1F775A3C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/engineermanas/iOSExercise.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>927E9D1C7F0F5A1326EF845D19165FDA1F775A3C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>927E9D1C7F0F5A1326EF845D19165FDA1F775A3C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSExercise</string>
+		</dict>
+	</array>
+</dict>
+</plist>
