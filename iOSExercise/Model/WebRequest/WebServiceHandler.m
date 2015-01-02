@@ -8,6 +8,8 @@
 
 #import "WebServiceHandler.h"
 #import "Contsant.h"
+#import "JSONKit.h"
+
 
 static WebServiceHandler *sharedInstance = nil;
 
@@ -38,35 +40,28 @@ static WebServiceHandler *sharedInstance = nil;
 
 - (void)webServiceCallWithURL:(NSString*)url withParameter:(id)parameter
 {
-    __block NSDictionary *currentObject = nil;
+    __block NSDictionary *jsonObject = nil;
     
     NSURL *serviceURL = [NSURL URLWithString:url];
-    
-    /*********** start thread for check download ***********/
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        NSURLSessionDataTask *downloadDataTask = [[NSURLSession sharedSession]
+    NSURLSessionDataTask *downloadDataTask = [[NSURLSession sharedSession]
                                               dataTaskWithURL:serviceURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                   
                                                   NSString *stringResponse = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-                                                  currentObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+                                                  NSData *convertToData = [stringResponse dataUsingEncoding:NSUTF8StringEncoding];
+                                                  jsonObject = [NSJSONSerialization JSONObjectWithData:convertToData options:0 error:&error];
+                                                  
+                                                  if (self.delegate && [self.delegate respondsToSelector:@selector(webServiceSuccessResponse:)])
+                                                  {
+                                                      [self.delegate webServiceSuccessResponse:jsonObject];
+                                                  }
+                                                  else
+                                                  {
+                                                      [self.delegate webServiceFailResponse:jsonObject];
+                                                  }
+                                                  
                                               }];
-        [downloadDataTask resume];
-        
-        dispatch_async(dispatch_get_main_queue(), ^(void){
-            
-            if (self.delegate && [self.delegate respondsToSelector:@selector(webServiceSuccessResponse:)])
-            {
-                [self.delegate webServiceSuccessResponse:currentObject];
-            }
-            else
-            {
-                [self.delegate webServiceFailResponse:currentObject];
-            }
-
-        });
-    });
-}
+    [downloadDataTask resume];
+    
+ }
 
 @end

@@ -10,8 +10,8 @@
 
 @protocol WebServiceHandlerDelegate <NSObject>
 
--(void)webServiceSuccessResponse:(id)success;
--(void)webServiceFailResponse:(id)fail;
+-(void)webServiceSuccessResponse:(NSDictionary*)successDictionary;
+-(void)webServiceFailResponse:(NSDictionary*)failDictionary;
 
 @end
 

@@ -8,26 +8,18 @@
         <!--Table View Controller-->
         <scene sceneID="RLk-Cz-X7g">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cw-Ge-P6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="HZ5-ca-apC" customClass="TableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tlh-cD-i4V">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uz8-OR-Yqx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hgs-Bv-lhK">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hgs-Bv-lhK" id="ncO-Z4-jPm">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="HZ5-ca-apC" id="3TX-J7-Z8y"/>
-                            <outlet property="delegate" destination="HZ5-ca-apC" id="yHW-4W-BXT"/>
+                            <outlet property="dataSource" destination="HZ5-ca-apC" id="v6Z-HQ-Hei"/>
+                            <outlet property="delegate" destination="HZ5-ca-apC" id="qXU-KG-13y"/>
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cw-Ge-P6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>

@@ -15,6 +15,10 @@
 		C6D3A6B81A52A64A007F2366 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6D3A6B71A52A64A007F2366 /* Images.xcassets */; };
 		C6D3A6BB1A52A64A007F2366 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D3A6B91A52A64A007F2366 /* LaunchScreen.xib */; };
 		C6D3A6C71A52A64B007F2366 /* iOSExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3A6C61A52A64B007F2366 /* iOSExerciseTests.m */; };
+		C6E7091C1A5662230031B3D3 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E7091B1A5662230031B3D3 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C6E709231A566CC60031B3D3 /* RowsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E709221A566CC60031B3D3 /* RowsClass.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C6E709271A56A9FF0031B3D3 /* TableCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E709261A56A9FF0031B3D3 /* TableCustomCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C6E7092B1A56D6D50031B3D3 /* StaticiCon.png in Resources */ = {isa = PBXBuildFile; fileRef = C6E7092A1A56D6D50031B3D3 /* StaticiCon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,13 @@
 		C6D3A6C01A52A64A007F2366 /* iOSExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D3A6C51A52A64A007F2366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6D3A6C61A52A64B007F2366 /* iOSExerciseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSExerciseTests.m; sourceTree = "<group>"; };
+		C6E7091A1A5662230031B3D3 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		C6E7091B1A5662230031B3D3 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		C6E709211A566CC60031B3D3 /* RowsClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowsClass.h; sourceTree = "<group>"; };
+		C6E709221A566CC60031B3D3 /* RowsClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowsClass.m; sourceTree = "<group>"; };
+		C6E709251A56A9FF0031B3D3 /* TableCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCustomCell.h; sourceTree = "<group>"; };
+		C6E709261A56A9FF0031B3D3 /* TableCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCustomCell.m; sourceTree = "<group>"; };
+		C6E7092A1A56D6D50031B3D3 /* StaticiCon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StaticiCon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +78,8 @@
 		C61819B91A53F7EB00E4DBEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6E709241A56A9FF0031B3D3 /* TableCustomCell */,
+				C6E709201A566CC60031B3D3 /* RowsList */,
 				C61819BA1A53F7EB00E4DBEC /* WebRequest */,
 			);
 			path = Model;
@@ -119,6 +132,7 @@
 		C6D3A6A91A52A649007F2366 /* iOSExercise */ = {
 			isa = PBXGroup;
 			children = (
+				C6E709181A5662230031B3D3 /* ThirdParty */,
 				C61819C21A5408F500E4DBEC /* Constant */,
 				C61819B91A53F7EB00E4DBEC /* Model */,
 				C61819BD1A53F7EB00E4DBEC /* ViewController */,
@@ -133,6 +147,7 @@
 		C6D3A6AA1A52A649007F2366 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C6E7092A1A56D6D50031B3D3 /* StaticiCon.png */,
 				C6D3A6AE1A52A64A007F2366 /* AppDelegate.h */,
 				C6D3A6AF1A52A64A007F2366 /* AppDelegate.m */,
 				C6D3A6AB1A52A649007F2366 /* Info.plist */,
@@ -156,6 +171,41 @@
 				C6D3A6C51A52A64A007F2366 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6E709181A5662230031B3D3 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				C6E709191A5662230031B3D3 /* JSON */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		C6E709191A5662230031B3D3 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				C6E7091A1A5662230031B3D3 /* JSONKit.h */,
+				C6E7091B1A5662230031B3D3 /* JSONKit.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		C6E709201A566CC60031B3D3 /* RowsList */ = {
+			isa = PBXGroup;
+			children = (
+				C6E709211A566CC60031B3D3 /* RowsClass.h */,
+				C6E709221A566CC60031B3D3 /* RowsClass.m */,
+			);
+			path = RowsList;
+			sourceTree = "<group>";
+		};
+		C6E709241A56A9FF0031B3D3 /* TableCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				C6E709251A56A9FF0031B3D3 /* TableCustomCell.h */,
+				C6E709261A56A9FF0031B3D3 /* TableCustomCell.m */,
+			);
+			path = TableCustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +290,7 @@
 			files = (
 				C6D3A6B61A52A64A007F2366 /* Main.storyboard in Resources */,
 				C6D3A6BB1A52A64A007F2366 /* LaunchScreen.xib in Resources */,
+				C6E7092B1A56D6D50031B3D3 /* StaticiCon.png in Resources */,
 				C6D3A6B81A52A64A007F2366 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +313,9 @@
 				C61819C01A53F7EB00E4DBEC /* WebServiceHandler.m in Sources */,
 				C6D3A6AD1A52A64A007F2366 /* main.m in Sources */,
 				C61819C11A53F7EB00E4DBEC /* TableViewController.m in Sources */,
+				C6E709271A56A9FF0031B3D3 /* TableCustomCell.m in Sources */,
+				C6E7091C1A5662230031B3D3 /* JSONKit.m in Sources */,
+				C6E709231A566CC60031B3D3 /* RowsClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
