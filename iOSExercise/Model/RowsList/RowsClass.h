@@ -13,7 +13,6 @@
     NSString *title;
     NSString *description;
     NSString *imageHref;
-
 }
 
 @property (nonatomic, copy) NSString *title;

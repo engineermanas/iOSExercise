@@ -2,11 +2,12 @@
 //  StoreCustomCell.m
 //  iOSExercise
 //
-//  Created by MANAS PARIDA on 31/12/14.
+//  Created by Manasa Parida on 02/01/15.
 //  Copyright (c) 2014 Manas Parida. All rights reserved.
 //
 
 #import "TableCustomCell.h"
+#import "Contsant.h"
 
 @implementation TableCustomCell
 
@@ -19,18 +20,18 @@
         
         // Initialization code
         title = [[UILabel alloc]init];
-        title.font = [UIFont fontWithName:@"Helvetica" size:15];
+        title.font = [UIFont fontWithName:FontNameHelveticaBold size:15];
+        title.numberOfLines = 2;
         title.lineBreakMode = NSLineBreakByWordWrapping;
         title.textAlignment = NSTextAlignmentLeft;
-        title.textColor = [UIColor blackColor];
-        title.backgroundColor = [UIColor clearColor];
+        title.textColor = CellTitleColor;
         
         description = [[UILabel alloc]init];
-        description.font = [UIFont fontWithName:@"Helvetica" size:10];
+        description.font = [UIFont fontWithName:FontNameHelvetica size:12];
+        description.numberOfLines = 15;
         title.lineBreakMode = NSLineBreakByWordWrapping;
         description.textAlignment = NSTextAlignmentLeft;
         description.textColor = [UIColor blackColor];
-        description.backgroundColor = [UIColor clearColor];
         
         iconImage = [[UIImageView alloc]init];
 
@@ -44,11 +45,6 @@
 - (void)layoutSubviews 
 {
     [super layoutSubviews];
-    CGRect contentRect = self.contentView.bounds;
-    CGFloat boundsX = contentRect.origin.x;
-    CGRect frame;
-    frame= CGRectMake(boundsX+0,0,0,0);
-    iconImage.frame = frame;
 }
 
 - (void)dealloc {
