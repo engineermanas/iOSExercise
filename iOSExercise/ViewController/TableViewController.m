@@ -133,11 +133,6 @@
     return 1;
 }
 
-//-(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    
-//    return  17;
-//}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RowsClass *dataList = [mutblArrayData objectAtIndex:indexPath.row];
@@ -161,7 +156,7 @@
     // Customizable Cell Instance which is going to use as ReusableCell
     TableCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Cell object validation if there or not
+    // Cell object validation
     if (cell == nil) {
         
         cell = [[[TableCustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
@@ -187,27 +182,21 @@
     cell.description.text = dataList.description;
 
     /************* Questions About Image Size ?? Dynamic or Static Size *************/
-    // This check for setting the iconImage frame
-    // if the description doesn't have data then also descriptionSize wil return the height
-    // But the icon height we are calulating as per the descriptionSize height so that it will be dynamic as per the value returns from services
-    // we can make it Static BUT we can also change the requirement
+    // This check for setting the iconImage frame if the description is less than 18
+    // if the description have nill or null data then set the static assumption value
+    // But the icon height we are calulating as per the descriptionSize height so that it will be dynamicaly calculated as per the value returns from services
     
-    if (descriptionSize.height <= 18)
-    {
-        cell.iconImage.frame = iConImageDefaultFrame;
-    } else {
-        cell.iconImage.frame = iConImageDynamicFrame;
-    }
+    cell.iconImage.frame = iConImageDynamicFrame;
     cell.iconImage.contentMode = UIViewContentModeScaleAspectFill;
     cell.iconImage.clipsToBounds = YES;
     
     /**************** Table View Lazy Loading ***************/
 
     // Image download will happen on background so that main thread will not break the UI
-    // When user will scroll the TableCell initialy it will display as Lazy Loading Concept
-    // I set one placeholder image instead of blank screen
-    // Once image download completed then cell icon image will display the original image which returns from service
-    // if service returns nil or null then i am setting static image which is in resource bundle
+    // When user will scroll the TableView initialy it will display the placeholder image
+    // Once download completed it will display the original image which returns service
+    // If service returns nil or null then static placeholder image will display
+    
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,  0ul);
     dispatch_async(queue, ^{
         

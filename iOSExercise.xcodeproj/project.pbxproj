@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C61819C01A53F7EB00E4DBEC /* WebServiceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C61819BC1A53F7EB00E4DBEC /* WebServiceHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C61819C11A53F7EB00E4DBEC /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61819BF1A53F7EB00E4DBEC /* TableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C61CB68C1A59DD000027ACA2 /* PlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = C61CB68B1A59DD000027ACA2 /* PlaceHolder.png */; };
 		C63D9E941A598C0B0041C9DC /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C63D9E931A598C0B0041C9DC /* Logo.png */; };
 		C6D3A6AD1A52A64A007F2366 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3A6AC1A52A64A007F2366 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C6D3A6B01A52A64A007F2366 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3A6AF1A52A64A007F2366 /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -37,6 +38,7 @@
 		C61819BE1A53F7EB00E4DBEC /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		C61819BF1A53F7EB00E4DBEC /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		C61819C31A540A8900E4DBEC /* Contsant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Contsant.h; sourceTree = "<group>"; };
+		C61CB68B1A59DD000027ACA2 /* PlaceHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlaceHolder.png; sourceTree = "<group>"; };
 		C63D9E931A598C0B0041C9DC /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		C6D3A6A71A52A649007F2366 /* iOSExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D3A6AB1A52A649007F2366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		C6D3A6AA1A52A649007F2366 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C61CB68B1A59DD000027ACA2 /* PlaceHolder.png */,
 				C63D9E931A598C0B0041C9DC /* Logo.png */,
 				C6D3A6AE1A52A64A007F2366 /* AppDelegate.h */,
 				C6D3A6AF1A52A64A007F2366 /* AppDelegate.m */,
@@ -291,6 +294,7 @@
 				C6D3A6B61A52A64A007F2366 /* Main.storyboard in Resources */,
 				C63D9E941A598C0B0041C9DC /* Logo.png in Resources */,
 				C6D3A6BB1A52A64A007F2366 /* LaunchScreen.xib in Resources */,
+				C61CB68C1A59DD000027ACA2 /* PlaceHolder.png in Resources */,
 				C6D3A6B81A52A64A007F2366 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
