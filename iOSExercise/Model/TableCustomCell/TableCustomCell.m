@@ -28,7 +28,7 @@
         
         description = [[UILabel alloc]init];
         description.font = [UIFont fontWithName:FontNameHelvetica size:12];
-        description.numberOfLines = 15;
+        description.numberOfLines = 10;
         title.lineBreakMode = NSLineBreakByWordWrapping;
         description.textAlignment = NSTextAlignmentLeft;
         description.textColor = [UIColor blackColor];

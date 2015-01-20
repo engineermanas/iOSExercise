@@ -136,9 +136,19 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RowsClass *dataList = [mutblArrayData objectAtIndex:indexPath.row];
-    CGSize descriptionSize = [self getContentSizeWithString:dataList.description WithFont:[UIFont boldSystemFontOfSize:12] withTextSize:CGSizeMake(190, FLT_MAX)];
+    CGSize descriptionSize = [self getContentSizeWithString:dataList.description WithFont:[UIFont boldSystemFontOfSize:12] withTextSize:CGSizeMake(210, FLT_MAX)];
     
-    return descriptionSize.height+30;
+    if (descriptionSize.height+30 < 70)
+    {
+        descriptionSize.height = 70;
+        
+    }
+    else
+    {
+        descriptionSize.height = descriptionSize.height +20;
+    }
+    
+    return descriptionSize.height;
 }
 
 
@@ -170,7 +180,7 @@
     RowsClass *dataList = [mutblArrayData objectAtIndex:indexPath.row];
     
     // Get the tittle and description content size dynamicaly to set the Frame Size
-    CGSize titleSize = [self getContentSizeWithString:dataList.title WithFont:[UIFont boldSystemFontOfSize:15] withTextSize:TittleContentSize];
+    CGSize titleSize = [self getContentSizeWithString:dataList.title WithFont:[UIFont boldSystemFontOfSize:16] withTextSize:TittleContentSize];
     CGSize descriptionSize = [self getContentSizeWithString:dataList.description WithFont:[UIFont boldSystemFontOfSize:12] withTextSize:DescriptionContentSize];
     
     // Set the title frame according to the content size width and height from titleSize
@@ -180,18 +190,14 @@
     // Set the description frame according to the content size width and height descriptionSize
     cell.description.frame = DescriptionFrame;
     cell.description.text = dataList.description;
-
-    /************* Questions About Image Size ?? Dynamic or Static Size *************/
-    // This check for setting the iconImage frame if the description is less than 18
-    // if the description have nill or null data then set the static assumption value
-    // But the icon height we are calulating as per the descriptionSize height so that it will be dynamicaly calculated as per the value returns from services
     
-    cell.iconImage.frame = iConImageDynamicFrame;
+    // Set the iconImage frame
+    cell.iconImage.frame = iConImageDefaultFrame;
     cell.iconImage.contentMode = UIViewContentModeScaleAspectFill;
     cell.iconImage.clipsToBounds = YES;
     
+    
     /**************** Table View Lazy Loading ***************/
-
     // Image download will happen on background so that main thread will not break the UI
     // When user will scroll the TableView initialy it will display the placeholder image
     // Once download completed it will display the original image which returns service
@@ -202,22 +208,14 @@
         
         NSURL *imageURL = [NSURL URLWithString:dataList.imageHref];
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        
         if (imageData) {
-            
             // Once image download completed call the main queue to set the downloaded image
             dispatch_sync(dispatch_get_main_queue(), ^{
-                
                 cell.iconImage.image = [UIImage imageWithData:imageData];
             });
-        } else {
-            // If there is no downloaded data set the default image as placeholder
-            cell.iconImage.image = [UIImage imageNamed:LogoImageName];
         }
     });
     
-    // Initial image loading from resource bundle
-    cell.iconImage.image = [UIImage imageNamed:LogoImageName];
     return cell;
 }
 

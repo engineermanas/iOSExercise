@@ -19,10 +19,9 @@
 
 #define TittleContentSize        CGSizeMake(300, FLT_MAX)
 #define TittleFrame              CGRectMake(10, 2, titleSize.width,titleSize.height)
-#define DescriptionContentSize   CGSizeMake(190, FLT_MAX)
+#define DescriptionContentSize   CGSizeMake(210, FLT_MAX)
 #define DescriptionFrame         CGRectMake(10, titleSize.height+1, descriptionSize.width, descriptionSize.height)
-#define iConImageDefaultFrame    CGRectMake(190+10, 17, 110, cell.bounds.size.height-cell.title.frame.size.height-3)
-#define iConImageDynamicFrame    CGRectMake(190+10, 17, 110, descriptionSize.height)
+#define iConImageDefaultFrame    CGRectMake(190+40, 10, 60, 50)
 
 #define NillString              @""
 #define RowKey                  @"rows"
